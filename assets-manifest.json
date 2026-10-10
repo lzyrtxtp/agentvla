@@ -1,0 +1,232 @@
+[
+  {
+    "path": "assets/button-case.webp",
+    "size": 247304,
+    "sha256": "62c29ee87f5910e54c6f80b1627049199d8872475450133242ad27361a2b83ae"
+  },
+  {
+    "path": "assets/captions-en.vtt",
+    "size": 3025,
+    "sha256": "67dace67764b0969404fc38f871a5ea6d1415460e1b78dcf5563b4f6092a69ee"
+  },
+  {
+    "path": "assets/captions-zh.vtt",
+    "size": 3056,
+    "sha256": "16b1952ddf2a9730740ae3b1f63c685215aac4fce7b827d9e5a41b98736f59ce"
+  },
+  {
+    "path": "assets/ecia.webp",
+    "size": 239694,
+    "sha256": "7c4e03655eb8165a8e547c13303fe7ae7ac4ec5fd09d45d4a14aaef52d0d6428"
+  },
+  {
+    "path": "assets/favicon.svg",
+    "size": 196,
+    "sha256": "12b305f84bbe0e6046b5cf67330526dcbca3769b1da47be293b84fc4f6c955fa"
+  },
+  {
+    "path": "assets/hd-basket.jpg",
+    "size": 100592,
+    "sha256": "c16f47889ff71b4af8eeb89c096257036ddb58de7af90cf3229dbe1d98b1adbb"
+  },
+  {
+    "path": "assets/hd-basket.mp4",
+    "size": 10105242,
+    "sha256": "1c82f0916570d17558f5c9a4b2b299ba303762d039fec58790b0b08e2cee99af"
+  },
+  {
+    "path": "assets/hd-blocks.jpg",
+    "size": 51895,
+    "sha256": "f61286b49076b4b83b47be612995dba03d57a9ae4e044b0716ba97279215205f"
+  },
+  {
+    "path": "assets/hd-blocks.mp4",
+    "size": 9113830,
+    "sha256": "b916bb538752df8d6bd4746e6c7f915212973ff47e1c1c36dc14213b0b461a34"
+  },
+  {
+    "path": "assets/hd-button-history.jpg",
+    "size": 47859,
+    "sha256": "723a7a07397de63113b101c0f2674b033471c199a0efdf4a24a431c842b6975f"
+  },
+  {
+    "path": "assets/hd-button-history.mp4",
+    "size": 11102423,
+    "sha256": "fb795ca658a32c9faaff09303e256dad7363a1b35c8d90fd51af9e333b189de7"
+  },
+  {
+    "path": "assets/hd-button-pi05.jpg",
+    "size": 52720,
+    "sha256": "369b50e1fa189867d3e97af5b16bd46614a9716343cf0238323d0f6fe6e549eb"
+  },
+  {
+    "path": "assets/hd-button-pi05.mp4",
+    "size": 8787595,
+    "sha256": "986eba8223cbf3fddfe008caf836f8834cba703782536d6c5d33ee162439d049"
+  },
+  {
+    "path": "assets/hd-classify-agentvla.jpg",
+    "size": 85554,
+    "sha256": "17ff1c1740810fef227d26fa199a56cbc04ac7bfcc0b10dd0615528fcb65126e"
+  },
+  {
+    "path": "assets/hd-classify-agentvla.mp4",
+    "size": 8197595,
+    "sha256": "6e7ed0bd024731ed34654d4fb406d9abae029a9ed60c3cdcc053a8028f45f0d7"
+  },
+  {
+    "path": "assets/hd-classify-pi05.jpg",
+    "size": 85531,
+    "sha256": "9941d6e49b494de4315c1527a5e376c5b3cd76adba9b1bd584cc36b374a8ceee"
+  },
+  {
+    "path": "assets/hd-classify-pi05.mp4",
+    "size": 19387664,
+    "sha256": "cc6bb95a8377b77e3bb8d53838c7939e4f16451e7979442ae5c454d970ca68b9"
+  },
+  {
+    "path": "assets/hd-cup-agentvla.jpg",
+    "size": 49249,
+    "sha256": "69df0467b44d408f037b1210df0dbcf960493be8f78145425aee15999659ffe7"
+  },
+  {
+    "path": "assets/hd-cup-agentvla.mp4",
+    "size": 19038693,
+    "sha256": "c64d3c1fa4fe7d0fa34813220a75ae0a90df91dd5d6ca98fecf33a94fe857fae"
+  },
+  {
+    "path": "assets/hd-cup-pi05.jpg",
+    "size": 60047,
+    "sha256": "7267f53b86601bb41e9219e845cbf79f997e3d9a5afa5db1c2047cb32c6e7887"
+  },
+  {
+    "path": "assets/hd-cup-pi05.mp4",
+    "size": 26102788,
+    "sha256": "102acec1679c67cec6b839953ccace0187ab1b3963491ab599c600f0f154c32b"
+  },
+  {
+    "path": "assets/hd-drawer.jpg",
+    "size": 56351,
+    "sha256": "42b1b05efe0778024d7d962cc68f6d5ba12e0ae68c74f9911a896165f9f3df4c"
+  },
+  {
+    "path": "assets/hd-drawer.mp4",
+    "size": 17695340,
+    "sha256": "9301117bfa56a91689de3e60feef0588fb2cebf882fa67e2be3da0949f8544b8"
+  },
+  {
+    "path": "assets/hd-fruits.jpg",
+    "size": 65541,
+    "sha256": "425f0d6dff548d91ed5d3e1f10925d126246a415f7017946da092b783059198d"
+  },
+  {
+    "path": "assets/hd-fruits.mp4",
+    "size": 7280102,
+    "sha256": "892ad80fbab541078a2620bd99bb216c409c1b3f75631b3bcd91f9eb79594db3"
+  },
+  {
+    "path": "assets/hd-glasses.jpg",
+    "size": 53141,
+    "sha256": "40b9491b09820b68f95efd86c7ec17ed6d4515546d24849d16e5a9af18681421"
+  },
+  {
+    "path": "assets/hd-glasses.mp4",
+    "size": 9613759,
+    "sha256": "ffca6a7600c19a0a6ae1f351d67564efdbf0865f65ab33b73c4794f4e99379b5"
+  },
+  {
+    "path": "assets/hd-headphone.jpg",
+    "size": 55917,
+    "sha256": "8a4c85ef84f013980860b72907092c6b1374172ef6890adba961c845f9e1bd2b"
+  },
+  {
+    "path": "assets/hd-headphone.mp4",
+    "size": 5492125,
+    "sha256": "2f44c70dbd222479e70596220d54dae545703d5c758b4d7dbb80eb9843728231"
+  },
+  {
+    "path": "assets/hd-pairing.jpg",
+    "size": 65970,
+    "sha256": "39fb999ae40d49d6958ac7c77eadeeed587a76cf945a87ae50cdc17e990cb0d7"
+  },
+  {
+    "path": "assets/hd-pairing.mp4",
+    "size": 9050041,
+    "sha256": "ec523f8402a3ac9f89b71bcb8f5624f3d8dc9a9e4401752a6b36dc029726c3b1"
+  },
+  {
+    "path": "assets/hd-ring.jpg",
+    "size": 44075,
+    "sha256": "af47c03136bb5717514e8ff4cd9191c7b5bab4cb9e6f69bbbeb041ace4ce062f"
+  },
+  {
+    "path": "assets/hd-ring.mp4",
+    "size": 7510329,
+    "sha256": "899d12d2ef999c2353b3b1e6cac8a0a6c742fb1b54bf97c00acfb754092abf31"
+  },
+  {
+    "path": "assets/hd-spoon.jpg",
+    "size": 46710,
+    "sha256": "f8861306a9d9ad30bc17747439f7352af499f255d64feca5c6e50b3705e6e5f6"
+  },
+  {
+    "path": "assets/hd-spoon.mp4",
+    "size": 8031910,
+    "sha256": "f6366d1d4a27edd3a256df6196565bc7bcf6381fca4bdd17aee32583dee54dd3"
+  },
+  {
+    "path": "assets/method.webp",
+    "size": 290518,
+    "sha256": "e0c71254dfc1bab38bb04715d68bf0684ede41d0c1bd3b55bd5280831492d79e"
+  },
+  {
+    "path": "assets/overview.jpg",
+    "size": 107241,
+    "sha256": "83e6f3d24e913bbc4463a01b31d90ff5ae0beda490d854643ac2a6d091b10aca"
+  },
+  {
+    "path": "assets/overview.mp4",
+    "size": 16569264,
+    "sha256": "2f2ab1ea7be75fb5d30192212584544723a01be15fc87c21187200a77d146d68"
+  },
+  {
+    "path": "assets/wireline-agentvla.jpg",
+    "size": 47358,
+    "sha256": "554fb5cdd10e65165e2edb7c07c4dec00f11b5d440787dfbd9b8bdba0e5a1dd6"
+  },
+  {
+    "path": "assets/wireline-agentvla.mp4",
+    "size": 13650959,
+    "sha256": "7f15b2b04886225084d1967138cdb9bc2e12b9ca625a420050b07f0cb820a8e5"
+  },
+  {
+    "path": "assets/wireline-dreamzero.jpg",
+    "size": 50247,
+    "sha256": "1f685702e9b6d88ba0610daff3d51d003310f72fa8fc8ef011a020c18aa4b25c"
+  },
+  {
+    "path": "assets/wireline-dreamzero.mp4",
+    "size": 12289047,
+    "sha256": "4feb70b633555a383021ac8ef006f615bdca76f37e5133175e45d1c638591c86"
+  },
+  {
+    "path": "assets/wireline-official.jpg",
+    "size": 49123,
+    "sha256": "3b4f45b6cdeaa884bf0c0c8c47053c043af4c2ed7dfdfbcc7d6f1021db15595b"
+  },
+  {
+    "path": "assets/wireline-official.mp4",
+    "size": 11762427,
+    "sha256": "ee9f766d0b7485f06e8ddc19f25cd5842b8e822272cf61c0d4c3cd55f2347ea9"
+  },
+  {
+    "path": "assets/wireline-table4w.jpg",
+    "size": 49366,
+    "sha256": "8a5b70a00f89125f07123b23da36e3f38ef43289c2ec7754cfdc1b34de5b26cd"
+  },
+  {
+    "path": "assets/wireline-table4w.mp4",
+    "size": 13217427,
+    "sha256": "78b9209a67688963b4427a435d725e29269a4ef5c1bc3443e3da7fe87565c21a"
+  }
+]
