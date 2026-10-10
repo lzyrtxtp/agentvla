@@ -185,9 +185,10 @@
     "sha256": "83e6f3d24e913bbc4463a01b31d90ff5ae0beda490d854643ac2a6d091b10aca"
   },
   {
-    "path": "assets/overview.mp4",
-    "size": 16569264,
-    "sha256": "2f2ab1ea7be75fb5d30192212584544723a01be15fc87c21187200a77d146d68"
+    "path": "assets/overview-clear-20261011.mp4",
+    "size": 19308590,
+    "sha256": "9dd5b71adfc2f22f9cb24f3d59914ea2a8d12a9776070e8a2112c77538fc82e9",
+    "passthrough": true
   },
   {
     "path": "assets/wireline-agentvla.jpg",

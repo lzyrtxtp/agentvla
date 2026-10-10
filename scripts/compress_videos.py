@@ -1,4 +1,4 @@
-"""Create lighter 720p web copies; keep the source assets untouched."""
+"""Compress demos; publish the size-budgeted 1080p overview without re-encoding."""
 import hashlib
 import json
 import os
@@ -18,6 +18,13 @@ manifest = json.loads((ROOT / 'assets-manifest.json').read_text())
 
 def compress(item):
     original = SITE / item['path']
+    if item.get('passthrough'):
+        result = {'source': item['path'], 'path': item['path'],
+                  'original_bytes': item['size'], 'bytes': original.stat().st_size,
+                  'sha256': hashlib.sha256(original.read_bytes()).hexdigest()}
+        assert result['bytes'] == item['size'] and result['sha256'] == item['sha256']
+        print(original.name, 'preserved without re-encoding', flush=True)
+        return result
     output = original.with_name(original.stem + '.web.mp4')
     overview = original.name == 'overview.mp4'
     crf, rate, buf, keyframes = ('30', '850k', '1700k', '80') if overview else ('26', '1500k', '3000k', '40')
