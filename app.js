@@ -1,7 +1,5 @@
 const videos=[...document.querySelectorAll('video')];
-// Load a complete local media Blob before playback. Native seeking then does
-// not depend on HTTP Range support in the hosting/authentication layer.
-const mediaCache=new Map();
+// Use native HTTP Range playback so videos can start before the entire file downloads.
 const playerStates=new WeakMap();
 function timeLabel(seconds){
   const value=Number.isFinite(seconds)?Math.max(0,Math.floor(seconds)):0;
@@ -89,34 +87,19 @@ function addTimeline(video,holder,state){
   state.update=update;
   update();
 }
-async function mediaBlob(url,onProgress){
-  if(mediaCache.has(url))return mediaCache.get(url);
-  const request=(async()=>{
-    const response=await fetch(url,{credentials:'same-origin'});
-    if(!response.ok)throw new Error('Video could not be loaded. Please try again.');
-    const type=response.headers.get('Content-Type')||'';
-    if(type.includes('text/html'))throw new Error('Please sign in to view this private video.');
-    const total=Number(response.headers.get('Content-Length'));
-    const chunks=[];let received=0;
-    if(response.body){
-      const reader=response.body.getReader();
-      while(true){const {done,value}=await reader.read();if(done)break;chunks.push(value);received+=value.length;onProgress(total?Math.min(99,Math.floor(received/total*100)):null);}
-    }else{chunks.push(await response.arrayBuffer());}
-    return URL.createObjectURL(new Blob(chunks,{type:'video/mp4'}));
-  })();
-  mediaCache.set(url,request);
-  try{return await request;}catch(error){mediaCache.delete(url);throw error;}
-}
 async function prepareVideo(video,state){
   if(state.ready)return;
-  state.loading=true;state.update();state.button.disabled=true;state.button.textContent='Loading video…';state.message.textContent='Loading the video for smooth seeking.';
+  state.loading=true;state.update();state.button.disabled=true;state.button.textContent='Loading video…';state.message.textContent='Loading video…';
   try{
-    const url=await mediaBlob(state.source,pct=>{state.button.textContent=pct===null?'Loading video…':`Loading ${pct}%`;});
-    const metadata=new Promise((resolve,reject)=>{
-      video.addEventListener('loadedmetadata',resolve,{once:true});
-      video.addEventListener('error',()=>reject(new Error('This browser could not read the video.')),{once:true});
+    await new Promise((resolve,reject)=>{
+      const cleanup=()=>{clearTimeout(timeout);video.removeEventListener('loadedmetadata',loaded);video.removeEventListener('error',failed);};
+      const loaded=()=>{cleanup();resolve();};
+      const failed=()=>{cleanup();reject(new Error('Video could not load. Reconnect and retry.'));};
+      const timeout=setTimeout(()=>{cleanup();reject(new Error('The connection is slow. Please retry.'));},30000);
+      video.addEventListener('loadedmetadata',loaded);
+      video.addEventListener('error',failed);
+      video.src=state.source;video.preload='auto';video.load();
     });
-    video.src=url;video.preload='auto';video.load();await metadata;
     state.ready=true;video.controls=!video.hasAttribute('data-comparison');state.message.textContent='';
     state.button.hidden=true;
   }finally{state.loading=false;state.button.disabled=false;state.update();}
@@ -125,7 +108,7 @@ async function playVideo(video){
   const state=playerStates.get(video);if(state.loading)return;
   try{
     await prepareVideo(video,state);
-    // A user may scroll away during download; do not start offscreen playback.
+    // Do not start playback if the user scrolls away while metadata loads.
     const rect=video.getBoundingClientRect();
     if(rect.bottom>0&&rect.top<innerHeight)await video.play();
   }catch(error){state.button.hidden=false;state.button.textContent='Retry video';state.message.textContent=error instanceof TypeError?'Video could not load. Reconnect and retry.':error.message;}
@@ -140,9 +123,13 @@ videos.forEach(video=>{
   const source=video.querySelector('source');
   const state={source:source?.src||video.src,button,message,ready:false,loading:false};
   playerStates.set(video,state);addTimeline(video,holder,state);
-  // Avoid a second, non-seekable native request before the user starts playback.
+  // Keep offscreen players idle; start native streaming when the user presses play.
   video.controls=false;video.preload='none';
   button.addEventListener('click',()=>video.paused?playVideo(video):video.pause());
+  video.addEventListener('waiting',()=>{if(state.ready&&!video.paused)state.message.textContent='Buffering…';});
+  video.addEventListener('seeking',()=>{if(state.ready)state.message.textContent='Loading selected position…';});
+  ['playing','seeked','pause','ended'].forEach(event=>video.addEventListener(event,()=>{if(!state.loading)state.message.textContent='';}));
+
   video.addEventListener('play',()=>videos.forEach(other=>{
     // Comparison panels are independent and may play side by side.
     if(other!==video&&!(video.hasAttribute('data-comparison')&&other.hasAttribute('data-comparison')))other.pause();
