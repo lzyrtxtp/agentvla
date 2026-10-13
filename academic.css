@@ -134,6 +134,15 @@ footer{font-size:14px}
  .side-by-side .comparison-card .video-start{font-size:12px;padding:6px 10px}
  .comparison-grid .comparison-card:fullscreen .milestone-list{grid-template-columns:repeat(var(--steps),minmax(0,1fr))}
 }
+
+/* Paper abstract and a single, aligned ECIA introduction. */
+#abstract{max-width:900px}
+#abstract .intro-grid p{text-align:left;font-size:16px;line-height:1.85}
+#data .section-heading{margin-bottom:18px}
+#data .section-intro{max-width:820px;margin:0 auto 24px;text-align:left;font-size:16px;line-height:1.8}
+@media(max-width:600px){
+ #abstract .intro-grid p,#data .section-intro{font-size:15px;line-height:1.8}
+}
 @media(max-width:800px){
  .hero h1{font-size:34px;letter-spacing:-.8px}
  .desktop-break{display:none}
