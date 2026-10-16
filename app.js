@@ -17,7 +17,7 @@ function addSubtaskProgress(video,bar){
   list.setAttribute('aria-label','Reviewed subtask milestones');
   const cells=track.steps.map((step,index)=>{
     const item=document.createElement('li');item.className='milestone';
-    const symbol=document.createElement('span');symbol.className='milestone-symbol';
+    const symbol=document.createElement('span');symbol.className='milestone-symbol';symbol.textContent=String(index+1);
     const label=document.createElement('span');label.className='milestone-label';label.textContent=step.label;
     item.append(symbol,label);list.append(item);return {item,symbol,step,index};
   });
@@ -29,12 +29,13 @@ function addSubtaskProgress(video,bar){
       const done=(step.at!==null&&video.currentTime>=step.at)||(end&&step.endState==='completed');
       const missed=!done&&end&&step.endState==='incomplete';
       const unannotated=track.partial&&step.at===null&&step.endState!=='incomplete';
-      const state=done?'done':missed?'incomplete':'pending';
-      item.dataset.state=state;symbol.textContent=done?'✓':missed?'×':unannotated?'—':String(index+1);
+      const state=done?'done':missed?'incomplete':unannotated?'unannotated':'pending';
+      item.dataset.state=state;
       item.setAttribute('aria-label',`${step.label}: ${done?'completed':missed?'not completed at end':unannotated?'not annotated':'not yet confirmed'}`);
       if(done)complete++;
     });
-    count.textContent=track.partial?(end?"Insertion incomplete":"Partial annotation"):`${complete} / ${track.steps.length} completed`;
+    count.textContent=`${complete} / ${track.steps.length} confirmed`;
+    count.title=track.partial?'Only annotated milestones are counted; unannotated steps remain gray.':'Milestones confirmed by the reviewed video annotations.';
   };
   ['loadedmetadata','timeupdate','seeked','ended','emptied'].forEach(event=>video.addEventListener(event,update));
   update();

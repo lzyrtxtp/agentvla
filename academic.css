@@ -100,10 +100,12 @@ footer{font-size:14px}
 .comparison-grid.side-by-side .comparison-task{grid-column:1/-1}
 .subtask-progress{background:#fff;padding:12px 14px 15px;border-top:1px solid #e5eaf0;min-width:0}
 .progress-heading{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#64707c;margin-bottom:9px;line-height:1.5}
+.progress-heading>span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
 .progress-heading>span:first-child{font-weight:600;color:#465767}
 .milestone-list{display:grid;grid-template-columns:repeat(var(--steps),minmax(0,1fr));gap:6px;list-style:none;padding:0;margin:0}
 .milestone{display:flex;align-items:center;gap:5px;border-top:4px solid #dfe5eb;background:#f3f5f7;padding:8px 6px;border-radius:4px;color:#6a7580;font-size:13px;line-height:1.4;min-width:0}
 .milestone-symbol{flex:none;width:17px;text-align:center;font-weight:700}
+.milestone[data-state=unannotated]{border-top-style:dashed}
 .milestone[data-state=done]{color:#226345;background:#eaf5ef;border-color:#64a786}
 .milestone[data-state=incomplete]{color:#9b4b48;background:#fbefed;border-color:#cd827b}
 .milestone-label{overflow-wrap:anywhere}
